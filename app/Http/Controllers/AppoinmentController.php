@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appoinments;
 use Illuminate\Http\Request;
 
 class AppoinmentController extends Controller
@@ -13,7 +14,7 @@ class AppoinmentController extends Controller
      */
     public function index()
     {
-        //
+        return Appoinments::all();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Appoinments;
+use App\Http\Controllers\AppoinmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Public routes
-Route::get('/appoinments', [Appoinments::class, 'index']);
+Route::get('/appoinments', [AppoinmentController::class, 'index']);
 
 //Private routes
 
