@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 //Public routes
 Route::get('/appoinments', [AppoinmentController::class, 'index']);
 Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
+Route::post('/appoinments/', [AppoinmentController::class, 'store']);
 
 //Private routes
 
