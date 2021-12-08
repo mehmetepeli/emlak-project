@@ -78,6 +78,6 @@ class AppoinmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Appoinments::destroy($id);
     }
 }

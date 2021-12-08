@@ -20,6 +20,7 @@ Route::get('/appoinments', [AppoinmentController::class, 'index']);
 Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
 Route::post('/appoinments/', [AppoinmentController::class, 'store']);
 Route::put('/appoinments/{id}', [AppoinmentController::class, 'update']);
+Route::delete('/appoinments/{id}', [AppoinmentController::class, 'destroy']);
 
 //Private routes
 
