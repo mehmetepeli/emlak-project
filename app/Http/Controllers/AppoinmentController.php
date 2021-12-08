@@ -64,7 +64,10 @@ class AppoinmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $appoinment = Appoinments::find($id);
+        $appoinment->update($request->all());
+
+        return $appoinment;
     }
 
     /**
