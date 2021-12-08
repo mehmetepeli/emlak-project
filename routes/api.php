@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AppoinmentController;
 use Illuminate\Http\Request;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 //Public routes
 Route::get('/appoinments', [AppoinmentController::class, 'index']);
 Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
+
+Route::get('/contacts', [ContactController::class, 'index']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
