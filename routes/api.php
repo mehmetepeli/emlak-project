@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AppoinmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
 Route::post('/appoinments/', [AppoinmentController::class, 'store']);
 Route::put('/appoinments/{id}', [AppoinmentController::class, 'update']);
 Route::delete('/appoinments/{id}', [AppoinmentController::class, 'destroy']);
+
+Route::post('/register', [AuthController::class, 'register']);
 
 //Private routes
 
