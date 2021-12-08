@@ -25,7 +25,23 @@ class AppoinmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'agent_id' => 'required',
+            'client_id' => 'required',
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'from_postcode' => 'required',
+            'to_postcode' => 'required',
+            'distance' => 'required',
+            'meet_date' => 'required',
+            'meet_time' => 'required',
+            'exit_time' => 'required',
+            'return_time' => 'required',
+        ]);
+
+        return Appoinments::create($request->all());
     }
 
     /**
