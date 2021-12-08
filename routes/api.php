@@ -22,6 +22,7 @@ Route::get('/appoinments', [AppoinmentController::class, 'index']);
 Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
 
 Route::get('/contacts', [ContactController::class, 'index']);
+Route::post('/contacts', [ContactController::class, 'store']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);

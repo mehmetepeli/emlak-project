@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacts;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class ContactController extends Controller
 {
@@ -25,7 +27,32 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fields = $request->validate([
+            'name' => 'required|string',
+            'surname' => 'required|string',
+            'email' => 'required|string|unique:contacts,email',
+            'phone' => 'required|string|unique:contacts,phone',
+            'address' => 'required|string',
+            'password' => 'required|string|confirmed',
+        ]);
+
+        $contact = Contacts::create([
+            'name' => $fields['name'],
+            'surname' => $fields['surname'],
+            'email' => $fields['email'],
+            'phone' => $fields['phone'],
+            'address' => $fields['address'],
+            'password' => bcrypt($fields['address']),
+        ]);
+
+        $token = $contact->createToken('token')->plainTextToken;
+
+        $response = [
+            'contact' => $contact,
+            'token' => $token
+        ];
+
+        return response($response, 201);
     }
 
     /**
