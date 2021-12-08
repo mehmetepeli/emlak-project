@@ -36,7 +36,7 @@ class AppoinmentController extends Controller
      */
     public function show($id)
     {
-        //
+        return Appoinments::find($id);
     }
 
     /**
