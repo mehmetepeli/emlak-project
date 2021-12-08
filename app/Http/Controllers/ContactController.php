@@ -89,6 +89,6 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Contacts::destroy($id);
     }
 }
