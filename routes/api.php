@@ -24,6 +24,7 @@ Route::put('/appoinments/{id}', [AppoinmentController::class, 'update']);
 Route::delete('/appoinments/{id}', [AppoinmentController::class, 'destroy']);
 
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 //Private routes
 
