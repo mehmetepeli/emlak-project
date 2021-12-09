@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+ini_set('memory_limit', '-1');
+
 use App\Models\Appoinments;
 use Illuminate\Http\Request;
 
@@ -61,8 +63,6 @@ class MeetController extends Controller
         }
 
         $st_calc_time = str_replace('.',':', $calc_time);
-
-        echo $st_calc_time.'<br/>';
 
         $new_hour = $distance_duration / 3600 % 24;
         $new_minute = $distance_duration / 60 % 60;

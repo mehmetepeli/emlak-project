@@ -1,5 +1,7 @@
 <?php
 
+ini_set("memory_limit",0);
+use App\Http\Controllers\MeetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,5 @@ Route::get('/', function () {
 Route::get('/meeting', function() {
     return view('meeting');
 });
+
+Route::post('/meet_save', [MeetController::class, 'saveMeet']);

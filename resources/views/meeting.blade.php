@@ -128,6 +128,7 @@
                     },
                     cache: false,
                     success: function(result){
+                        console.log(result);
                         var response = $.parseJSON(result);
 
                         if(response.action === 'OK') {
