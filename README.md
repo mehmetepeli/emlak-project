@@ -1,5 +1,5 @@
 ## Emlak Project API
-http://www.mehmettepeli.com/emlak-project/meeting can registered for appoinments
+http://www.mehmettepeli.com/emlak-project/meeting can register for appoinments
 
 ## Routes
 
