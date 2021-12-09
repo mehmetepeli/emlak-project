@@ -23,9 +23,6 @@ Route::get('/appoinments/{id}', [AppoinmentController::class, 'show']);
 
 Route::get('/contacts', [ContactController::class, 'index']);
 Route::get('/contacts/{id}', [ContactController::class, 'show']);
-Route::post('/contacts', [ContactController::class, 'store']);
-Route::put('/contacts/{id}', [ContactController::class, 'update']);
-Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -36,6 +33,11 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::post('/appoinments/', [AppoinmentController::class, 'store']);
     Route::put('/appoinments/{id}', [AppoinmentController::class, 'update']);
     Route::delete('/appoinments/{id}', [AppoinmentController::class, 'destroy']);
+
+    //Contact Routes
+    Route::post('/contacts', [ContactController::class, 'store']);
+    Route::put('/contacts/{id}', [ContactController::class, 'update']);
+    Route::delete('/contacts/{id}', [ContactController::class, 'destroy']);
 
     //User routes
     Route::post('/logout', [AuthController::class, 'logout']);
